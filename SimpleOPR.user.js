@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         5 Star One Key
+// @name         SimpleOPR
 // @version      1.0
-// @description  Give five star with single click
-// @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
-// @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
-// @author       jqqqqqqqqqq
+// @description  Simple your OPR
+// @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
+// @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
+// @author       jqqqqqqqqqq&SemiBan
 // @match        https://opr.ingress.com/recon
 // @grant        none
 // ==/UserScript==

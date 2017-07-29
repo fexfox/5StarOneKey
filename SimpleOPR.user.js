@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      1.0
+// @version      1.1
 // @description  Simple your OPR
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js

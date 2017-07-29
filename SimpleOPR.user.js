@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      1.1
+// @version      1.11
 // @description  Simple your OPR
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
@@ -32,6 +32,10 @@ function rate_portal(total, name, history, unique, location, safety) {
     document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
     document.querySelector("#submitDiv > button:nth-child(5)").click();
     }
+	else
+	{
+		   document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
+	}
 }
 
 function rd(n,m){

@@ -42,6 +42,7 @@ function rd(n,m){
     var c = m-n+1;
     return Math.floor(Math.random() * c + n);
 }
+
 function add_button() {
     var list= document.getElementsByClassName("btn-group");
     for (var i=0; i<list.length; i++){
@@ -60,7 +61,6 @@ function add_button() {
         button.onclick = function(){rate_portal(button_data["total"],  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));};
     });
 }
-
 
 (function() {
     add_button();

@@ -20,7 +20,29 @@ var buttons = [
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////DO NOT EDIT THIS LINE BELOW!
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+document.onkeydown = function noNumbers(e)
+{
+var keynum;
+var keychar;
+if(window.event) // IE
+  {
+  keynum = e.keyCode;
+  }
+else if(e.which) // Netscape/Firefox/Opera
+  {
+  keynum = e.which;
+  }
+if(keynum==49||keynum==97){
+    rate_portal(1,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+if(keynum==50||keynum==98){
+    rate_portal(2,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+if(keynum==51||keynum==99){
+    rate_portal(3,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+if(keynum==52||keynum==100){
+    rate_portal(4,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+if(keynum==53||keynum==101){
+    rate_portal(5,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+};
 
 function rate_portal(total, name, history, unique, location, safety) {
     if(total>1){

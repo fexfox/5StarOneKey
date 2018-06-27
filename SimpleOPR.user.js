@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      4.1
+// @version      4.2
 // @description  Simple your OPR
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
@@ -70,8 +70,8 @@ function add_button() {
     for (var i=0; i<list.length; i++){
     list[i].style.display="none";
     }
-    var button_region =document.getElementsByClassName("col-xs-12 col-sm-4 text-center")[0];
-    var refnode =document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > br:nth-child(3)");
+    var button_region =document.getElementsByClassName("col-xs-12 col-sm-4")[0];
+    var refnode =document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div");
     var br = document.createElement("br");
     button_region.insertBefore(br,refnode);
     buttons.forEach(function(button_data) {

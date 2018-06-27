@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      4.0
+// @version      4.1
 // @description  Simple your OPR
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
@@ -46,7 +46,7 @@ if(keynum==53||keynum==101){
 
 function rate_portal(total, name, history, unique, location, safety) {
     if(total>1){
-		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
+		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div > div > button:nth-child(" + total + ")").click();
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(5) > button:nth-child(" + name + ")").click();
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(10) > button:nth-child(" + history + ")").click();
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(15) > button:nth-child(" + unique + ")").click();
@@ -56,7 +56,7 @@ function rate_portal(total, name, history, unique, location, safety) {
     }
 	else
 	{
-		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
+		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div > div > button:nth-child(" + total + ")").click();
 	}
 }
 

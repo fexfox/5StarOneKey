@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      4.2
+// @version      4.3
 // @description  Simple your OPR
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
@@ -42,6 +42,8 @@ if(keynum==52||keynum==100){
     rate_portal(4,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
 if(keynum==53||keynum==101){
     rate_portal(5,  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));}
+if(keynum==48||keynum==96){
+    window.location.href = window.location.href;}
 };
 
 function rate_portal(total, name, history, unique, location, safety) {

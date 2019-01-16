@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         SimpleOPR
-// @version      4.3
+// @version      4.4
 // @description  Simple your OPR
+// @require        https://code.jquery.com/jquery-2.2.4.min.js
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @downloadURL  https://github.com/fexfox/5StarOneKey/raw/master/SimpleOPR.user.js
 // @author       jqqqqqqqqqq&SemiBan
@@ -47,6 +48,7 @@ if(keynum==48||keynum==96){
 };
 
 function rate_portal(total, name, history, unique, location, safety) {
+
     if(total>1){
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div > div > button:nth-child(" + total + ")").click();
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(5) > button:nth-child(" + name + ")").click();
@@ -60,6 +62,7 @@ function rate_portal(total, name, history, unique, location, safety) {
 	{
 		document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div > div > button:nth-child(" + total + ")").click();
 	}
+
 }
 
 function rd(n,m){
@@ -85,7 +88,43 @@ function add_button() {
         button.onclick = function(){rate_portal(button_data["total"],  rd(3,5), rd(3,5), rd(3,5), rd(4,5), rd(4,5));};
     });
 }
+function add_data(){
+
+$.get('https://opr.ingress.com/api/v1/vault/reward',{},function(obj){
+    var li=document.createElement("li");
+    var strhtml='<a href="/upgrades/">进度:'+(100*obj.progress/obj.interval)+'% &nbsp;可用:'+obj.available+'/'+obj.maximum+'&nbsp;已兑换:'+obj.total+'</a><ul style="display:none;">';
+    strhtml+='<li>最近3个被提升优先级的po：</li>';
+    for (var i=0; i < obj.history.length; i++) {
+    if (3==i) {
+        break;
+    }
+        var v=obj.history[i];
+         strhtml+='<li>';
+        strhtml+='<img style="height:60px;margin:3px" src='+v.imageUrl+' alt="">';
+        strhtml+='<span>&nbsp;&nbsp;【'+v.title+'】&nbsp;&nbsp;</span>';
+        strhtml+='<span>'+v.location+'</span>';
+        strhtml+='</li>';
+}
+     strhtml+='</ul>';
+    li.innerHTML=strhtml;
+    li.addEventListener("mouseover",function(){
+       var tar = this.getElementsByTagName("ul")[0]
+        console.log(tar);
+       console.log(event.target);
+        tar.style.display = "block";
+    },false);
+      li.addEventListener("mouseout",function(){
+        var tar = this.getElementsByTagName("ul")[0]
+        tar.style.display = "none";
+    },false)
+$(".navbar-nav:nth-child(1)").append(li);
+});
+      }
+
 
 (function() {
     add_button();
+    add_data();
+
+
 })();

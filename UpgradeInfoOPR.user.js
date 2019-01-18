@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR-UpgradeInfo
-// @version      1.0
+// @version      1.1
 // @description  Show OPR Upgrade Info Obviously
 // @require      https://code.jquery.com/jquery-2.2.4.min.js
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/UpgradeInfoOPR.user.js
@@ -21,11 +21,11 @@ $.get('https://opr.ingress.com/api/v1/vault/reward',{},function(obj){
         break;
     }
         var v=obj.history[i];
-         strhtml+='<li>';
-        strhtml+='<img style="height:60px;margin:3px" src='+v.imageUrl+' alt="">';
-        strhtml+='<span>&nbsp;&nbsp;【'+v.title+'】&nbsp;&nbsp;</span>';
-        strhtml+='<span>'+v.location+'</span>';
-        strhtml+='</li>';
+         strhtml+='<li> <table style="width:300px"><tr>';
+        strhtml+=' <td rowspan="2"><img style="width:100px;margin:3px" src='+v.imageUrl+' alt=""></td>';
+        strhtml+='<td><span>&nbsp;&nbsp;【'+v.title+'】&nbsp;&nbsp;</span></td></tr>';
+        strhtml+='<tr><td><span>'+v.location+'</span></td>';
+        strhtml+=' </tr></table></li>';
 }
      strhtml+='</ul>';
     li.innerHTML=strhtml;

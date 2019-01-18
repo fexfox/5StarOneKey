@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR-UpgradeInfo
-// @version      1.1
+// @version      1.2
 // @description  Show OPR Upgrade Info Obviously
 // @require      https://code.jquery.com/jquery-2.2.4.min.js
 // @updateURL    https://github.com/fexfox/5StarOneKey/raw/master/UpgradeInfoOPR.user.js
@@ -14,7 +14,7 @@ function calc_data(){
 
 $.get('https://opr.ingress.com/api/v1/vault/reward',{},function(obj){
     var li=document.createElement("li");
-    var strhtml='<a href="/upgrades/">进度:'+(100*obj.progress/obj.interval)+'% &nbsp;可用:'+obj.available+'/'+obj.maximum+'&nbsp;已兑换:'+obj.total+'</a><ul style="display:none;">';
+    var strhtml='<a href="/upgrades/">进度:'+(100*obj.progress/obj.interval)+'% &nbsp;可用:'+obj.available+'/'+obj.maximum+'&nbsp;已兑:'+obj.total+'</a><ul style="display:none;">';
     strhtml+='<li>最近3个被提升优先级的po：</li>';
     for (var i=0; i < obj.history.length; i++) {
     if (3==i) {
